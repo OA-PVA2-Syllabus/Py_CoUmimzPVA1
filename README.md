@@ -55,8 +55,40 @@ Deklaruj funkci `odhad_sance`, které bude mít 5 parametrů, které reprezentuj
 kritéria zadej jako nepovinná s výchozí hodnotou `False`. Funkce vrátí šanci na získání zakázky
 jako řetězec.
 
+Seznam poptávek nám přepsal juniorní developer. Před použitím dat je třeba je zkontrolovat a případně opravit.
+
 ## Výstupy
+
+
 - Vypočítej šanci na získání zakázky pro všechny firmy v `poptavka` a vypiš je na obrazovku.
 - Vypočítejte průměrný počet bodů pro všechny firmy v `poptavka` a vypište ho na obrazovku.
 - Jaká firma má největší šanci na získání zakázky? Vypište její název na obrazovku.
 - Seřaďte firmy sestupně podle šance na získání a zobrazte první tři.
+
+### Očekávaný výstup
+```
+Firma Firma A má šanci na získání zakázky: vysoká (body: 10)
+Firma Firma B má šanci na získání zakázky: střední (body: 8)
+Firma Firma C má šanci na získání zakázky: vysoká (body: 5)
+Firma Firma D má šanci na získání zakázky: malá (body: 4)
+Firma Firma E má šanci na získání zakázky: vysoká (body: 9)
+Firma Firma F má šanci na získání zakázky: střední (body: 8)
+Firma Firma G má šanci na získání zakázky: střední (body: 6)
+Firma Firma H má šanci na získání zakázky: střední (body: 6)
+Firma Firma I má šanci na získání zakázky: vysoká (body: 10)
+Firma Firma J má šanci na získání zakázky: střední (body: 8)
+Firma Firma K má šanci na získání zakázky: střední (body: 7)
+Firma Firma L má šanci na získání zakázky: střední (body: 6)
+Firma Firma M má šanci na získání zakázky: malá (body: 3)
+Firma Firma N má šanci na získání zakázky: malá (body: 4)
+Firma Firma O má šanci na získání zakázky: střední (body: 7)
+
+Průměrný počet bodů pro všechny firmy: 6.73
+
+Firma s největší šancí na získání zakázky: Firma A
+
+První tři firmy seřazené podle šance na získání zakázky:
+Firma Firma A má šanci na získání zakázky: vysoká (body: 10)
+Firma Firma I má šanci na získání zakázky: vysoká (body: 10)
+Firma Firma E má šanci na získání zakázky: vysoká (body: 9)
+```
