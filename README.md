@@ -7,7 +7,37 @@ Potřebujete-li více času, neváhejte se na něj zeptat. Opakování není na 
 
 ## Obsah
 
-# Vstupní data
+## Hodnocení zakázky
+
+Obchodníci v naší softwarové firmě používají jednoduchý systém, aby odhadli šanci na úspěch potenciální zakázky.
+  
+Každé zakázce přiřadí body od 0 do 10 a platí:
+- Pokud má zakázka méně než 5 bodů, šance na získání je `malá`.
+- Pokud má zakázka 6 až 8 bodů, šance na získání je `střední`.
+- Pokud má zakázka více bodů, šance na získání je `vysoká`.
+
+Body přidělují podle následujících kritérií:
+- Odvětví `odvetvi`: Firma nejlépe prodává do `automotive`, o něco hůře do `retail`.
+Pokud potenciální zákazník podniká v `automotive`, přičti 3 body, pokud v `retail`,
+   přičti 2 bod, jinak 0.
+- Obrat `obrat`: Firma nejlépe prodává zákazníkům se středním obratem. U malých většinou neuspěje,
+u velkých občas ano. Pokud má firma obrat menší než 10 mil. Euro, přičti `0` bodů. Pokud je mezi
+  10 a 1 000 mil. Euro, přičti `3` body, jinak `1` bod.
+- Země `zeme`: Firma je nejúspěšnější v `CZ` Česku a na `SK` Slovensku (2 body), o něco méně v `DE` Německu a ve `FR` Francii (1 bod).
+  Ostatním zemím dej `0`.
+- Konference `konference`: Firma loni pořádala odbornou konferenci pro zákazníky. Pokud se zákazník konference
+účastnil, přičti 1 bod, jinak 0.
+- Newsletter `newsletter`: Firma též rozesílá newsletter o svém produktu. Pokud zákazník newsletter odebírá,
+přičti 1 bod.
+  
+Deklaruj funkci `odhad_sance`, které bude mít 5 parametrů, které reprezentují zadaná kritéria. Poslední dvě
+kritéria zadej jako nepovinná s výchozí hodnotou `False`. Funkce vrátí šanci na získání zakázky
+jako řetězec.
+
+
+## Vstupní data
+Seznam poptávek nám přepsal juniorní developer. Před použitím dat je třeba je zkontrolovat a případně opravit.
+
 ```python
 poptavka = [
     {"nazev": "Firma A", "odvetvi": "automotive", "obrat": 50, "zeme": "CZ", "konference": True, "newsletter": True},
@@ -28,37 +58,7 @@ poptavka = [
 ]
 ```
 
-# Hodnocení zakázky
-
-Obchodníci v naší softwarové firmě používají jednoduchý systém, aby odhadli šanci na úspěch potenciální zakázky.
-  
-Každé zakázce přiřadí body od 0 do 10 a platí:
-* Pokud má zakázka méně než 5 bodů, šance na záskání je `malá`.
-* Pokud má zakázka 6 až 8 bodů, šance na získání je `střední`.
-* Pokud má zakázka více bodů, šance na získání je `vysoká`.
-
-Body přidělují podle následujících kritérií:
-* Odvětví `odvetvi`: Firma nejlépe prodává do `automotive`, o něco hůře do `retail`.
-Pokud potenciální zákazník podniká v `automotive`, přičti 3 body, pokud v `retail`,
-   přičti 2 bod, jinak 0.
-* Obrat `obrat`: Firma nejlépe prodává zákazníkům se středním obratem. U malých většinou neuspěje,
-u velkých občas ano. Pokud má firma obrat menší než 10 mil. Euro, přičti `0` bodů. Pokud je mezi
-  10 a 1 000 mil. Euro, přičti `3` body, jinak `1` bod.
-* Země `zeme`: Firma je nejúspěšnější v `CZ` Česku a na `SK` Slovensku (2 body), o něco méně v `DE` Německu a ve `FR` Francii (1 bod).
-  Ostatním zemím dej `0`.
-* Konference `konference`: Firma loni pořádala odbornou konferenci pro zákazníky. Pokud se zákazník konference
-účastnil, přičti 1 bod, jinak 0.
-* Newsletter `newsletter`: Firma též rozesílá newsletter o svém produktu. Pokud zákazník newsletter odebírá,
-přičti 1 bod.
-  
-Deklaruj funkci `odhad_sance`, které bude mít 5 parametrů, které reprezentují zadaná kritéria. Poslední dvě
-kritéria zadej jako nepovinná s výchozí hodnotou `False`. Funkce vrátí šanci na získání zakázky
-jako řetězec.
-
-Seznam poptávek nám přepsal juniorní developer. Před použitím dat je třeba je zkontrolovat a případně opravit.
-
 ## Výstupy
-
 
 - Vypočítej šanci na získání zakázky pro všechny firmy v `poptavka` a vypiš je na obrazovku.
 - Vypočítejte průměrný počet bodů pro všechny firmy v `poptavka` a vypište ho na obrazovku.
